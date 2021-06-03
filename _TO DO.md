@@ -1,0 +1,4 @@
+- write README
+- write clear comments in code 
+- re-style interface
+- replace poems with placeholders (out of copyright stuff)

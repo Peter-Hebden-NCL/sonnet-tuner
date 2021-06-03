@@ -1,0 +1,762 @@
+<head>
+    <style>
+        
+        /*FUNCTION*/
+        
+        #sonnet-container div {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        
+
+        /*STYLE*/
+
+        html {
+            background-color: ghostwhite;
+        }
+
+        body {
+            border: solid;
+            width: 50%;
+            margin: 1em auto;
+            overflow: hidden;
+            padding: 1em;
+            min-width: 25em;
+            background-color: rgb(30,30,30);
+            border-radius: 20px;
+        }
+
+        input {
+            width: 100%;
+            /* adapted from W3C guidelines*/
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 25px; /* Specified height */
+            background: #d3d3d3; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+            border-radius: 0;
+        }
+
+        input::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        input::-moz-range-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        #sonnet_title {
+            background-color: lightgrey;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 0.5em 1em;
+        }
+
+        #sonnet-container {
+            width: -webkit-fill-available;
+            overflow: hidden;
+            background-color: white;
+            height: 75vh;
+            padding-top: 1.5em;
+            padding-left: 1.5em;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <input type="range" min=0 max=100 value="50" id="freq">
+
+    <p id="sonnet_title">&nbsp;</p>
+    <p id="sonnet_author"></p>
+    <p>&nbsp;</p>
+    <div id="sonnet-container">
+        <div id="sonnet_1"><p class="line line_1"><span class="foot foot_1">I play</span>&nbsp;<span class="foot foot_2">Haydn</span>&nbsp;<span class="foot foot_3">after</span>&nbsp;<span class="foot foot_4">a black</span>&nbsp;<span class="foot foot_5">day</span>&nbsp;</p><p class="line line_2"><span class="foot foot_1">and feel</span>&nbsp;<span class="foot foot_2">a simple</span>&nbsp;<span class="foot foot_3">warmth in</span>&nbsp;<span class="foot foot_4">my hands.</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_3"><span class="foot foot_1">The keys</span>&nbsp;<span class="foot foot_2">are willing.</span>&nbsp;<span class="foot foot_3">Soft</span>&nbsp;<span class="foot foot_4">hammers</span>&nbsp;<span class="foot foot_5">strike.</span>&nbsp;</p><p class="line line_4"><span class="foot foot_1">The</span>&nbsp;<span class="foot foot_2">resonance</span>&nbsp;<span class="foot foot_3">green,</span>&nbsp;<span class="foot foot_4">lively</span>&nbsp;<span class="foot foot_5">and calm.</span>&nbsp;</p><p class="line line_5"><span class="foot foot_1">The</span>&nbsp;<span class="foot foot_2">music</span>&nbsp;<span class="foot foot_3">says</span>&nbsp;<span class="foot foot_4">freedom</span>&nbsp;<span class="foot foot_5">exists</span>&nbsp;</p><p class="line line_6"><span class="foot foot_1">and someone</span>&nbsp;<span class="foot foot_2">doesn’t</span>&nbsp;<span class="foot foot_3">pay the</span>&nbsp;<span class="foot foot_4">emperor</span>&nbsp;<span class="foot foot_5">tax.</span>&nbsp;</p><p class="line line_7"><span class="foot foot_1">I push</span>&nbsp;<span class="foot foot_2">down</span>&nbsp;<span class="foot foot_3">my hands</span>&nbsp;<span class="foot foot_4">in my</span>&nbsp;<span class="foot foot_5">Haydnpockets</span>&nbsp;</p><p class="line line_8"><span class="foot foot_1">and imitate</span>&nbsp;<span class="foot foot_2">a person</span>&nbsp;<span class="foot foot_3">looking on</span>&nbsp;<span class="foot foot_4">the world</span>&nbsp;<span class="foot foot_5">calmly.</span>&nbsp;</p><p class="line line_9"><span class="foot foot_1">I hoist</span>&nbsp;<span class="foot foot_2">the</span>&nbsp;<span class="foot foot_3">Haydnﬂag</span>&nbsp;<span class="foot foot_4">– it</span>&nbsp;<span class="foot foot_5">signifies:</span>&nbsp;</p><p class="line line_10"><span class="foot foot_1">‘We don’t</span>&nbsp;<span class="foot foot_2">give in.</span>&nbsp;<span class="foot foot_3">But want</span>&nbsp;<span class="foot foot_4">peace.’</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_11"><span class="foot foot_1">The music</span>&nbsp;<span class="foot foot_2">is a</span>&nbsp;<span class="foot foot_3">glass-house</span>&nbsp;<span class="foot foot_4">on the</span>&nbsp;<span class="foot foot_5">slope</span>&nbsp;</p><p class="line line_12"><span class="foot foot_1">where the</span>&nbsp;<span class="foot foot_2">stones ﬂy,</span>&nbsp;<span class="foot foot_3">the stones</span>&nbsp;<span class="foot foot_4">roll.</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_13"><span class="foot foot_1">And the</span>&nbsp;<span class="foot foot_2">stones roll</span>&nbsp;<span class="foot foot_3">right through</span>&nbsp;<span class="foot foot_4">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_14"><span class="foot foot_1">but</span>&nbsp;<span class="foot foot_2">each</span>&nbsp;<span class="foot foot_3">pane</span>&nbsp;<span class="foot foot_4">stays</span>&nbsp;<span class="foot foot_5">whole.</span>&nbsp;</p></div><div id="sonnet_2"><p class="line line_1"><span class="foot foot_1">Your body</span>&nbsp;<span class="foot foot_2">bends to</span>&nbsp;<span class="foot foot_3">every</span>&nbsp;<span class="foot foot_4">drag and</span>&nbsp;<span class="foot foot_5">schlep</span>&nbsp;</p><p class="line line_2"><span class="foot foot_1">To shunt</span>&nbsp;<span class="foot foot_2">its load</span>&nbsp;<span class="foot foot_3">along</span>&nbsp;<span class="foot foot_4">a</span>&nbsp;<span class="foot foot_5">precipice,</span>&nbsp;</p><p class="line line_3"><span class="foot foot_1">Aware how</span>&nbsp;<span class="foot foot_2">gravity</span>&nbsp;<span class="foot foot_3">undoes</span>&nbsp;<span class="foot foot_4">you step</span>&nbsp;<span class="foot foot_5">by step.</span>&nbsp;</p><p class="line line_4"><span class="foot foot_1">And all</span>&nbsp;<span class="foot foot_2">your life</span>&nbsp;<span class="foot foot_3">you lived</span>&nbsp;<span class="foot foot_4">in dread</span>&nbsp;<span class="foot foot_5">of this.</span>&nbsp;</p><p class="line line_5"><span class="foot foot_1">Your father's</span>&nbsp;<span class="foot foot_2">sister</span>&nbsp;<span class="foot foot_3">Mary</span>&nbsp;<span class="foot foot_4">Nancy</span>&nbsp;<span class="foot foot_5">cracked;</span>&nbsp;</p><p class="line line_6"><span class="foot foot_1">A giddy</span>&nbsp;<span class="foot foot_2">gene had</span>&nbsp;<span class="foot foot_3">set her</span>&nbsp;<span class="foot foot_4">mind</span>&nbsp;<span class="foot foot_5">askew,</span>&nbsp;</p><p class="line line_7"><span class="foot foot_1">A flawed</span>&nbsp;<span class="foot foot_2">accessory</span>&nbsp;<span class="foot foot_3">before</span>&nbsp;<span class="foot foot_4">the fact...</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_8"><span class="foot foot_1">But now</span>&nbsp;<span class="foot foot_2">it's</span>&nbsp;<span class="foot foot_3">Parkinson's</span>&nbsp;<span class="foot foot_4">that nobbles</span>&nbsp;<span class="foot foot_5">you.</span>&nbsp;</p><p class="line line_9"><span class="foot foot_1">We shared</span>&nbsp;<span class="foot foot_2">our youth</span>&nbsp;<span class="foot foot_3">and prime;</span>&nbsp;<span class="foot foot_4">this too</span>&nbsp;<span class="foot foot_5">we'll share.</span>&nbsp;</p><p class="line line_10"><span class="foot foot_1">'Just hold</span>&nbsp;<span class="foot foot_2">my hand,'</span>&nbsp;<span class="foot foot_3">you cry.</span>&nbsp;<span class="foot foot_4">'Don't let</span>&nbsp;<span class="foot foot_5">me fall!'</span>&nbsp;</p><p class="line line_11"><span class="foot foot_1">Then: 'Why</span>&nbsp;<span class="foot foot_2">are you</span>&nbsp;<span class="foot foot_3">there</span>&nbsp;<span class="foot foot_4">standing in</span>&nbsp;<span class="foot foot_5">my space?'</span>&nbsp;</p><p class="line line_12"><span class="foot foot_1">The selfsame</span>&nbsp;<span class="foot foot_2">time both</span>&nbsp;<span class="foot foot_3">there and</span>&nbsp;<span class="foot foot_4">yet not</span>&nbsp;<span class="foot foot_5">there?</span>&nbsp;</p><p class="line line_13"><span class="foot foot_1">To</span>&nbsp;<span class="foot foot_2">disengage</span>&nbsp;<span class="foot foot_3">yet hear</span>&nbsp;<span class="foot foot_4">your deepest</span>&nbsp;<span class="foot foot_5">call -</span>&nbsp;</p><p class="line line_14"><span class="foot foot_1">But how</span>&nbsp;<span class="foot foot_2">to hold</span>&nbsp;<span class="foot foot_3">and still</span>&nbsp;<span class="foot foot_4">stand back</span>&nbsp;<span class="foot foot_5">a pace?</span>&nbsp;</p></div><div id="sonnet_3"><p class="line line_1"><span class="foot foot_1">Before</span>&nbsp;<span class="foot foot_2">the</span>&nbsp;<span class="foot foot_3">spectacled</span>&nbsp;<span class="foot foot_4">professor</span>&nbsp;<span class="foot foot_5">snipped</span>&nbsp;</p><p class="line line_2"><span class="foot foot_1">The cord,</span>&nbsp;<span class="foot foot_2">I heard your</span>&nbsp;<span class="foot foot_3">birth-cry</span>&nbsp;<span class="foot foot_4">flood</span>&nbsp;<span class="foot foot_5">the ward,</span>&nbsp;</p><p class="line line_3"><span class="foot foot_1">And lowered</span>&nbsp;<span class="foot foot_2">your</span>&nbsp;<span class="foot foot_3">mother's</span>&nbsp;<span class="foot foot_4">tortured head,</span>&nbsp;<span class="foot foot_5">and wept.</span>&nbsp;</p><p class="line line_4"><span class="foot foot_1">The house</span>&nbsp;<span class="foot foot_2">you'd left</span>&nbsp;<span class="foot foot_3">would need</span>&nbsp;<span class="foot foot_4">to be</span>&nbsp;<span class="foot foot_5">restored.</span>&nbsp;</p><p class="line line_5"><span class="foot foot_1">No worse</span>&nbsp;<span class="foot foot_2">pain could</span>&nbsp;<span class="foot foot_3">bourne,</span>&nbsp;<span class="foot foot_4">to bear</span>&nbsp;<span class="foot foot_5">the joy</span>&nbsp;</p><p class="line line_6"><span class="foot foot_1">Of seeing</span>&nbsp;<span class="foot foot_2">you come</span>&nbsp;<span class="foot foot_3">in a slow</span>&nbsp;<span class="foot foot_4">dive from</span>&nbsp;<span class="foot foot_5">the womb,</span>&nbsp;</p><p class="line line_7"><span class="foot foot_1">Pushed from</span>&nbsp;<span class="foot foot_2">your</span>&nbsp;<span class="foot foot_3">fluid home</span>&nbsp;<span class="foot foot_4">pronounced</span>&nbsp;<span class="foot foot_5">'a boy'.</span>&nbsp;</p><p class="line line_8"><span class="foot foot_1">You'll never</span>&nbsp;<span class="foot foot_2">find</span>&nbsp;<span class="foot foot_3">so well</span>&nbsp;<span class="foot foot_4">equipped</span>&nbsp;<span class="foot foot_5">a room.</span>&nbsp;</p><p class="line line_9"><span class="foot foot_1">No house</span>&nbsp;<span class="foot foot_2">we build</span>&nbsp;<span class="foot foot_3">could hope</span>&nbsp;<span class="foot foot_4">to</span>&nbsp;<span class="foot foot_5">satisfy</span>&nbsp;</p><p class="line line_10"><span class="foot foot_1">Every</span>&nbsp;<span class="foot foot_2">small need,</span>&nbsp;<span class="foot foot_3">now that</span>&nbsp;<span class="foot foot_4">you've made</span>&nbsp;<span class="foot foot_5">this move</span>&nbsp;</p><p class="line line_11"><span class="foot foot_1">To share</span>&nbsp;<span class="foot foot_2">our</span>&nbsp;<span class="foot foot_3">lonliness</span>&nbsp;<span class="foot foot_4">much as</span>&nbsp;<span class="foot foot_5">we try</span>&nbsp;</p><p class="line line_12"><span class="foot foot_1">Our</span>&nbsp;<span class="foot foot_2">vocal</span>&nbsp;<span class="foot foot_3">skill to</span>&nbsp;<span class="foot foot_4">wall you round</span>&nbsp;<span class="foot foot_5">with love.</span>&nbsp;</p><p class="line line_13"><span class="foot foot_1">This day</span>&nbsp;<span class="foot foot_2">you crave</span>&nbsp;<span class="foot foot_3">so little,</span>&nbsp;<span class="foot foot_4">we</span>&nbsp;<span class="foot foot_5">so much</span>&nbsp;</p><p class="line line_14"><span class="foot foot_1">For you</span>&nbsp;<span class="foot foot_2">to live,</span>&nbsp;<span class="foot foot_3">who need</span>&nbsp;<span class="foot foot_4">our</span>&nbsp;<span class="foot foot_5">merest touch.</span>&nbsp;</p></div><div id="sonnet_4"><p class="line line_1"><span class="foot foot_1">How shall</span>&nbsp;<span class="foot foot_2">I hold</span>&nbsp;<span class="foot foot_3">my soul</span>&nbsp;<span class="foot foot_4">that it</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_2"><span class="foot foot_1">does not</span>&nbsp;<span class="foot foot_2">touch yours?</span>&nbsp;<span class="foot foot_3">How shall</span>&nbsp;<span class="foot foot_4">I lift</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_3"><span class="foot foot_1">it</span>&nbsp;<span class="foot foot_2">over</span>&nbsp;<span class="foot foot_3">you</span>&nbsp;<span class="foot foot_4">to other</span>&nbsp;<span class="foot foot_5">things?</span>&nbsp;</p><p class="line line_4"><span class="foot foot_1">If it</span>&nbsp;<span class="foot foot_2">would</span>&nbsp;<span class="foot foot_3">only</span>&nbsp;<span class="foot foot_4">sink</span>&nbsp;<span class="foot foot_5">below</span>&nbsp;</p><p class="line line_5"><span class="foot foot_1">into</span>&nbsp;<span class="foot foot_2">the dark</span>&nbsp;<span class="foot foot_3">like some</span>&nbsp;<span class="foot foot_4">lost thing</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_6"><span class="foot foot_1">or</span>&nbsp;<span class="foot foot_2">slumber</span>&nbsp;<span class="foot foot_3">in some</span>&nbsp;<span class="foot foot_4">quiet</span>&nbsp;<span class="foot foot_5">place</span>&nbsp;</p><p class="line line_7"><span class="foot foot_1">which did</span>&nbsp;<span class="foot foot_2">not</span>&nbsp;<span class="foot foot_3">echo</span>&nbsp;<span class="foot foot_4">your soft</span>&nbsp;<span class="foot foot_5">heart's beat.</span>&nbsp;</p><p class="line line_8"><span class="foot foot_1">But all</span>&nbsp;<span class="foot foot_2">that</span>&nbsp;<span class="foot foot_3">ever</span>&nbsp;<span class="foot foot_4">touched us -</span>&nbsp;<span class="foot foot_5">you and me -</span>&nbsp;</p><p class="line line_9"><span class="foot foot_1">touched us</span>&nbsp;<span class="foot foot_2">together</span>&nbsp;<span class="foot foot_3">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_4">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_10"><span class="foot foot_1">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_2">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_3">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_4">like</span>&nbsp;<span class="foot foot_5">a bow</span>&nbsp;</p><p class="line line_11"><span class="foot foot_1">that from</span>&nbsp;<span class="foot foot_2">two strings</span>&nbsp;<span class="foot foot_3">could draw</span>&nbsp;<span class="foot foot_4">one voice.</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_12"><span class="foot foot_1">On what</span>&nbsp;<span class="foot foot_2">instrument</span>&nbsp;<span class="foot foot_3">were we</span>&nbsp;<span class="foot foot_4">strung?</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_13"><span class="foot foot_1">And to</span>&nbsp;<span class="foot foot_2">what</span>&nbsp;<span class="foot foot_3">player</span>&nbsp;<span class="foot foot_4">did we</span>&nbsp;<span class="foot foot_5">sing</span>&nbsp;</p><p class="line line_14"><span class="foot foot_1">our</span>&nbsp;<span class="foot foot_2">interrupted</span>&nbsp;<span class="foot foot_3">song?</span>&nbsp;<span class="foot foot_4">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p></div><div id="sonnet_5"><p class="line line_1"><span class="foot foot_1">The big news</span>&nbsp;<span class="foot foot_2">around here</span>&nbsp;<span class="foot foot_3">is the</span>&nbsp;<span class="foot foot_4">fall of</span>&nbsp;<span class="foot foot_5">leaves</span>&nbsp;</p><p class="line line_2"><span class="foot foot_1">In</span>&nbsp;<span class="foot foot_2">Harrington</span>&nbsp;<span class="foot foot_3">Street</span>&nbsp;<span class="foot foot_4">and</span>&nbsp;<span class="foot foot_5">Synge Street,</span>&nbsp;</p><p class="line line_3"><span class="foot foot_1">Lying</span>&nbsp;<span class="foot foot_2">about</span>&nbsp;<span class="foot foot_3">in pockets,</span>&nbsp;<span class="foot foot_4">adrift at</span>&nbsp;<span class="foot foot_5">your feet</span>&nbsp;</p><p class="line line_4"><span class="foot foot_1">As you</span>&nbsp;<span class="foot foot_2">kick them</span>&nbsp;<span class="foot foot_3">away.</span>&nbsp;<span class="foot foot_4">The other news</span>&nbsp;<span class="foot foot_5">is the trees -</span>&nbsp;</p><p class="line line_5"><span class="foot foot_1">Their yellow,</span>&nbsp;<span class="foot foot_2">as I</span>&nbsp;<span class="foot foot_3">speak,</span>&nbsp;<span class="foot foot_4">is</span>&nbsp;<span class="foot foot_5">unbelievable,</span>&nbsp;</p><p class="line line_6"><span class="foot foot_1">Not that</span>&nbsp;<span class="foot foot_2">you need</span>&nbsp;<span class="foot foot_3">me to</span>&nbsp;<span class="foot foot_4">tell you.</span>&nbsp;<span class="foot foot_5">Everywhere</span>&nbsp;</p><p class="line line_7"><span class="foot foot_1">The house</span>&nbsp;<span class="foot foot_2">is</span>&nbsp;<span class="foot foot_3">falling</span>&nbsp;<span class="foot foot_4">down around</span>&nbsp;<span class="foot foot_5">our ears</span>&nbsp;</p><p class="line line_8"><span class="foot foot_1">And it's</span>&nbsp;<span class="foot foot_2">wonderful,</span>&nbsp;<span class="foot foot_3">in the</span>&nbsp;<span class="foot foot_4">dry, spicy</span>&nbsp;<span class="foot foot_5">air,</span>&nbsp;</p><p class="line line_9"><span class="foot foot_1">How</span>&nbsp;<span class="foot foot_2">quietly</span>&nbsp;<span class="foot foot_3">it happens.</span>&nbsp;<span class="foot foot_4">Close</span>&nbsp;<span class="foot foot_5">your eyes,</span>&nbsp;</p><p class="line line_10"><span class="foot foot_1">Don't think,</span>&nbsp;<span class="foot foot_2">just listen.</span>&nbsp;<span class="foot foot_3">Hear them</span>&nbsp;<span class="foot foot_4">fall,</span>&nbsp;<span class="foot foot_5">the years</span>&nbsp;</p><p class="line line_11"><span class="foot foot_1">We came</span>&nbsp;<span class="foot foot_2">towards</span>&nbsp;<span class="foot foot_3">each other,</span>&nbsp;<span class="foot foot_4">out of</span>&nbsp;<span class="foot foot_5">a sun</span>&nbsp;</p><p class="line line_12"><span class="foot foot_1">Already</span>&nbsp;<span class="foot foot_2">westering.</span>&nbsp;<span class="foot foot_3">Look at</span>&nbsp;<span class="foot foot_4">us,</span>&nbsp;<span class="foot foot_5">even yet,</span>&nbsp;</p><p class="line line_13"><span class="foot foot_1">Exchanging</span>&nbsp;<span class="foot foot_2">tree-lore,</span>&nbsp;<span class="foot foot_3">twenty</span>&nbsp;<span class="foot foot_4">years on</span>&nbsp;<span class="foot foot_5">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;</p><p class="line line_14"><span class="foot foot_1">In a</span>&nbsp;<span class="foot foot_2">leafless</span>&nbsp;<span class="foot foot_3">cathedral -</span>&nbsp;<span class="foot foot_4">bride and groom,</span>&nbsp;<span class="foot foot_5">well-met.</span>&nbsp;</p></div>
+    </div>
+
+
+    <script>
+        var slider = document.getElementById("freq");
+
+        var sonnet_1 = {
+            var_name: "sonnet_1",
+            position: 17,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "I play",
+                    "foot_2" : "Haydn",
+                    "foot_3" : "after",
+                    "foot_4" : "a black",
+                    "foot_5" : "day"
+                },
+                "line_2" : {
+                    "foot_1" : "and feel",
+                    "foot_2" : "a simple",
+                    "foot_3" : "warmth in",
+                    "foot_4" : "my hands.",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_3" : {
+                    "foot_1" : "The keys",
+                    "foot_2" : "are willing.",
+                    "foot_3" : "Soft",
+                    "foot_4" : "hammers",
+                    "foot_5" : "strike."
+                },
+                "line_4" : {
+                    "foot_1" : "The",
+                    "foot_2" : "resonance",
+                    "foot_3" : "green,",
+                    "foot_4" : "lively",
+                    "foot_5" : "and calm."
+                },
+                "line_5" : {
+                    "foot_1" : "The",
+                    "foot_2" : "music",
+                    "foot_3" : "says",
+                    "foot_4" : "freedom",
+                    "foot_5" : "exists"
+                },
+                "line_6" : {
+                    "foot_1" : "and someone",
+                    "foot_2" : "doesn’t",
+                    "foot_3" : "pay the",
+                    "foot_4" : "emperor",
+                    "foot_5" : "tax."
+                },
+                "line_7" : {
+                    "foot_1" : "I push",
+                    "foot_2" : "down",
+                    "foot_3" : "my hands",
+                    "foot_4" : "in my",
+                    "foot_5" : "Haydnpockets"
+                },
+                "line_8" : {
+                    "foot_1" : "and imitate",
+                    "foot_2" : "a person",
+                    "foot_3" : "looking on",
+                    "foot_4" : "the world",
+                    "foot_5" : "calmly."
+                },
+                "line_9" : {
+                    "foot_1" : "I hoist",
+                    "foot_2" : "the",
+                    "foot_3" : "Haydnﬂag",
+                    "foot_4" : "– it",
+                    "foot_5" : "signifies:"
+                },
+                "line_10" : {
+                    "foot_1" : "‘We don’t",
+                    "foot_2" : "give in.",
+                    "foot_3" : "But want",
+                    "foot_4" : "peace.’",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_11" : {
+                    "foot_1" : "The music",
+                    "foot_2" : "is a",
+                    "foot_3" : "glass-house",
+                    "foot_4" : "on the",
+                    "foot_5" : "slope"
+                },
+                "line_12" : {
+                    "foot_1" : "where the",
+                    "foot_2" : "stones ﬂy,",
+                    "foot_3" : "the stones",
+                    "foot_4" : "roll.",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_13" : {
+                    "foot_1" : "And the",
+                    "foot_2" : "stones roll",
+                    "foot_3" : "right through",
+                    "foot_4" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_14" : {
+                    "foot_1" : "but",
+                    "foot_2" : "each",
+                    "foot_3" : "pane",
+                    "foot_4" : "stays",
+                    "foot_5" : "whole."
+                }
+            },
+            colour: "red",
+            title: "Allegro"
+        };
+        var sonnet_2 = {
+            var_name: "sonnet_2",
+            position: 33,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "Your body",
+                    "foot_2" : "bends to",
+                    "foot_3" : "every",
+                    "foot_4" : "drag and",
+                    "foot_5" : "schlep"
+                },
+                "line_2" : {
+                    "foot_1" : "To shunt",
+                    "foot_2" : "its load",
+                    "foot_3" : "along",
+                    "foot_4" : "a",
+                    "foot_5" : "precipice,"
+                },
+                "line_3" : {
+                    "foot_1" : "Aware how",
+                    "foot_2" : "gravity",
+                    "foot_3" : "undoes",
+                    "foot_4" : "you step",
+                    "foot_5" : "by step."
+                },
+                "line_4" : {
+                    "foot_1" : "And all",
+                    "foot_2" : "your life",
+                    "foot_3" : "you lived",
+                    "foot_4" : "in dread",
+                    "foot_5" : "of this."
+                },
+                "line_5" : {
+                    "foot_1" : "Your father's",
+                    "foot_2" : "sister",
+                    "foot_3" : "Mary",
+                    "foot_4" : "Nancy",
+                    "foot_5" : "cracked;"
+                },
+                "line_6" : {
+                    "foot_1" : "A giddy",
+                    "foot_2" : "gene had",
+                    "foot_3" : "set her",
+                    "foot_4" : "mind",
+                    "foot_5" : "askew,"
+                },
+                "line_7" : {
+                    "foot_1" : "A flawed",
+                    "foot_2" : "accessory",
+                    "foot_3" : "before",
+                    "foot_4" : "the fact...",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_8" : {
+                    "foot_1" : "But now",
+                    "foot_2" : "it's",
+                    "foot_3" : "Parkinson's",
+                    "foot_4" : "that nobbles",
+                    "foot_5" : "you."
+                },
+                "line_9" : {
+                    "foot_1" : "We shared",
+                    "foot_2" : "our youth",
+                    "foot_3" : "and prime;",
+                    "foot_4" : "this too",
+                    "foot_5" : "we'll share."
+                },
+                "line_10" : {
+                    "foot_1" : "'Just hold",
+                    "foot_2" : "my hand,'",
+                    "foot_3" : "you cry.",
+                    "foot_4" : "'Don't let",
+                    "foot_5" : "me fall!'"
+                },
+                "line_11" : {
+                    "foot_1" : "Then: 'Why",
+                    "foot_2" : "are you",
+                    "foot_3" : "there",
+                    "foot_4" : "standing in",
+                    "foot_5" : "my space?'"
+                },
+                "line_12" : {
+                    "foot_1" : "The selfsame",
+                    "foot_2" : "time both",
+                    "foot_3" : "there and",
+                    "foot_4" : "yet not",
+                    "foot_5" : "there?"
+                },
+                "line_13" : {
+                    "foot_1" : "To",
+                    "foot_2" : "disengage",
+                    "foot_3" : "yet hear",
+                    "foot_4" : "your deepest",
+                    "foot_5" : "call -"
+                },
+                "line_14" : {
+                    "foot_1" : "But how",
+                    "foot_2" : "to hold",
+                    "foot_3" : "and still",
+                    "foot_4" : "stand back",
+                    "foot_5" : "a pace?"
+                }
+            },
+            colour: "blue",
+            title: "3"
+        };
+        var sonnet_3 = {
+            var_name: "sonnet_3",
+            position: 50,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "Before",
+                    "foot_2" : "the",
+                    "foot_3" : "spectacled",
+                    "foot_4" : "professor",
+                    "foot_5" : "snipped"
+                },
+                "line_2" : {
+                    "foot_1" : "The cord,",
+                    "foot_2" : "I heard your",
+                    "foot_3" : "birth-cry",
+                    "foot_4" : "flood",
+                    "foot_5" : "the ward,"
+                },
+                "line_3" : {
+                    "foot_1" : "And lowered",
+                    "foot_2" : "your",
+                    "foot_3" : "mother's",
+                    "foot_4" : "tortured head,",
+                    "foot_5" : "and wept."
+                },
+                "line_4" : {
+                    "foot_1" : "The house",
+                    "foot_2" : "you'd left",
+                    "foot_3" : "would need",
+                    "foot_4" : "to be",
+                    "foot_5" : "restored."
+                },
+                "line_5" : {
+                    "foot_1" : "No worse",
+                    "foot_2" : "pain could",
+                    "foot_3" : "bourne,",
+                    "foot_4" : "to bear",
+                    "foot_5" : "the joy"
+                },
+                "line_6" : {
+                    "foot_1" : "Of seeing",
+                    "foot_2" : "you come",
+                    "foot_3" : "in a slow",
+                    "foot_4" : "dive from",
+                    "foot_5" : "the womb,"
+                },
+                "line_7" : {
+                    "foot_1" : "Pushed from",
+                    "foot_2" : "your",
+                    "foot_3" : "fluid home",
+                    "foot_4" : "pronounced",
+                    "foot_5" : "'a boy'."
+                },
+                "line_8" : {
+                    "foot_1" : "You'll never",
+                    "foot_2" : "find",
+                    "foot_3" : "so well",
+                    "foot_4" : "equipped",
+                    "foot_5" : "a room."
+                },
+                "line_9" : {
+                    "foot_1" : "No house",
+                    "foot_2" : "we build",
+                    "foot_3" : "could hope",
+                    "foot_4" : "to",
+                    "foot_5" : "satisfy"
+                },
+                "line_10" : {
+                    "foot_1" : "Every",
+                    "foot_2" : "small need,",
+                    "foot_3" : "now that",
+                    "foot_4" : "you've made",
+                    "foot_5" : "this move"
+                },
+                "line_11" : {
+                    "foot_1" : "To share",
+                    "foot_2" : "our",
+                    "foot_3" : "lonliness",
+                    "foot_4" : "much as",
+                    "foot_5" : "we try"
+                },
+                "line_12" : {
+                    "foot_1" : "Our",
+                    "foot_2" : "vocal",
+                    "foot_3" : "skill to",
+                    "foot_4" : "wall you round",
+                    "foot_5" : "with love."
+                },
+                "line_13" : {
+                    "foot_1" : "This day",
+                    "foot_2" : "you crave",
+                    "foot_3" : "so little,",
+                    "foot_4" : "we",
+                    "foot_5" : "so much"
+                },
+                "line_14" : {
+                    "foot_1" : "For you",
+                    "foot_2" : "to live,",
+                    "foot_3" : "who need",
+                    "foot_4" : "our",
+                    "foot_5" : "merest touch."
+                }
+            },
+            colour: "green",
+            title: "Natural Son"
+        };
+        var sonnet_4 = {
+            var_name: "sonnet_4",
+            position: 67,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "How shall",
+                    "foot_2" : "I hold",
+                    "foot_3" : "my soul",
+                    "foot_4" : "that it",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_2" : {
+                    "foot_1" : "does not",
+                    "foot_2" : "touch yours?",
+                    "foot_3" : "How shall",
+                    "foot_4" : "I lift",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_3" : {
+                    "foot_1" : "it",
+                    "foot_2" : "over",
+                    "foot_3" : "you",
+                    "foot_4" : "to other",
+                    "foot_5" : "things?"
+                },
+                "line_4" : {
+                    "foot_1" : "If it",
+                    "foot_2" : "would",
+                    "foot_3" : "only",
+                    "foot_4" : "sink",
+                    "foot_5" : "below"
+                },
+                "line_5" : {
+                    "foot_1" : "into",
+                    "foot_2" : "the dark",
+                    "foot_3" : "like some",
+                    "foot_4" : "lost thing",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_6" : {
+                    "foot_1" : "or",
+                    "foot_2" : "slumber",
+                    "foot_3" : "in some",
+                    "foot_4" : "quiet",
+                    "foot_5" : "place"
+                },
+                "line_7" : {
+                    "foot_1" : "which did",
+                    "foot_2" : "not",
+                    "foot_3" : "echo",
+                    "foot_4" : "your soft",
+                    "foot_5" : "heart's beat."
+                },
+                "line_8" : {
+                    "foot_1" : "But all",
+                    "foot_2" : "that",
+                    "foot_3" : "ever",
+                    "foot_4" : "touched us -",
+                    "foot_5" : "you and me -"
+                },
+                "line_9" : {
+                    "foot_1" : "touched us",
+                    "foot_2" : "together",
+                    "foot_3" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_4" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_10" : {
+                    "foot_1" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_2" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_3" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_4" : "like",
+                    "foot_5" : "a bow"
+                },
+                "line_11" : {
+                    "foot_1" : "that from",
+                    "foot_2" : "two strings",
+                    "foot_3" : "could draw",
+                    "foot_4" : "one voice.",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_12" : {
+                    "foot_1" : "On what",
+                    "foot_2" : "instrument",
+                    "foot_3" : "were we",
+                    "foot_4" : "strung?",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_13" : {
+                    "foot_1" : "And to",
+                    "foot_2" : "what",
+                    "foot_3" : "player",
+                    "foot_4" : "did we",
+                    "foot_5" : "sing"
+                },
+                "line_14" : {
+                    "foot_1" : "our",
+                    "foot_2" : "interrupted",
+                    "foot_3" : "song?",
+                    "foot_4" : "&nbsp;&nbsp;&nbsp;&nbsp;",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                }
+            },
+            colour: "violet",
+            title: "The Song (after Rilke)"
+        };
+        var sonnet_5 = {
+            var_name: "sonnet_5",
+            position: 83,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "The big news",
+                    "foot_2" : "around here",
+                    "foot_3" : "is the",
+                    "foot_4" : "fall of",
+                    "foot_5" : "leaves"
+                },
+                "line_2" : {
+                    "foot_1" : "In",
+                    "foot_2" : "Harrington",
+                    "foot_3" : "Street",
+                    "foot_4" : "and",
+                    "foot_5" : "Synge Street,"
+                },
+                "line_3" : {
+                    "foot_1" : "Lying",
+                    "foot_2" : "about",
+                    "foot_3" : "in pockets,",
+                    "foot_4" : "adrift at",
+                    "foot_5" : "your feet"
+                },
+                "line_4" : {
+                    "foot_1" : "As you",
+                    "foot_2" : "kick them",
+                    "foot_3" : "away.",
+                    "foot_4" : "The other news",
+                    "foot_5" : "is the trees -"
+                },
+                "line_5" : {
+                    "foot_1" : "Their yellow,",
+                    "foot_2" : "as I",
+                    "foot_3" : "speak,",
+                    "foot_4" : "is",
+                    "foot_5" : "unbelievable,"
+                },
+                "line_6" : {
+                    "foot_1" : "Not that",
+                    "foot_2" : "you need",
+                    "foot_3" : "me to",
+                    "foot_4" : "tell you.",
+                    "foot_5" : "Everywhere"
+                },
+                "line_7" : {
+                    "foot_1" : "The house",
+                    "foot_2" : "is",
+                    "foot_3" : "falling",
+                    "foot_4" : "down around",
+                    "foot_5" : "our ears"
+                },
+                "line_8" : {
+                    "foot_1" : "And it's",
+                    "foot_2" : "wonderful,",
+                    "foot_3" : "in the",
+                    "foot_4" : "dry, spicy",
+                    "foot_5" : "air,"
+                },
+                "line_9" : {
+                    "foot_1" : "How",
+                    "foot_2" : "quietly",
+                    "foot_3" : "it happens.",
+                    "foot_4" : "Close",
+                    "foot_5" : "your eyes,"
+                },
+                "line_10" : {
+                    "foot_1" : "Don't think,",
+                    "foot_2" : "just listen.",
+                    "foot_3" : "Hear them",
+                    "foot_4" : "fall,",
+                    "foot_5" : "the years"
+                },
+                "line_11" : {
+                    "foot_1" : "We came",
+                    "foot_2" : "towards",
+                    "foot_3" : "each other,",
+                    "foot_4" : "out of",
+                    "foot_5" : "a sun"
+                },
+                "line_12" : {
+                    "foot_1" : "Already",
+                    "foot_2" : "westering.",
+                    "foot_3" : "Look at",
+                    "foot_4" : "us,",
+                    "foot_5" : "even yet,"
+                },
+                "line_13" : {
+                    "foot_1" : "Exchanging",
+                    "foot_2" : "tree-lore,",
+                    "foot_3" : "twenty",
+                    "foot_4" : "years on",
+                    "foot_5" : "&nbsp;&nbsp;&nbsp;&nbsp;"
+                },
+                "line_14" : {
+                    "foot_1" : "In a",
+                    "foot_2" : "leafless",
+                    "foot_3" : "cathedral -",
+                    "foot_4" : "bride and groom,",
+                    "foot_5" : "well-met."
+                }
+            },
+            colour: "orange",
+            title: "October"
+        };
+
+        var sonnets = [sonnet_1,sonnet_2,sonnet_3,sonnet_4,sonnet_5];
+        
+        //Hidden function for populating sonnet container (need JQuery to make dynamically generated text work with other functions)
+        /*
+        document.onload = function() {
+            console.log("loaded!");
+            var cont = document.getElementById("sonnet-container");
+            cont.innerHTML = "";
+            for (s in sonnets) {
+                var new_sonnet = "<div id='" + sonnets[s].var_name + "'>";
+                var line_index = 0;
+                for (l in sonnets[s].words) {
+                    //populate lines
+                    new_sonnet = new_sonnet + "<p class='line' id='" + Object.keys(sonnets[s].words)[line_index] + "'>";
+                    var foot_index = 0;
+                    for (f in sonnets[s].words[l]) {
+                        //populate feet
+                        new_sonnet = new_sonnet + "<span class='foot " + Object.keys(sonnets[s].words[l])[foot_index] + "'>" + sonnets[s].words[l][f] + "</span>&nbsp;";
+                        foot_index = foot_index + 1;
+                    }
+                    new_sonnet = new_sonnet + "</p>"
+                    line_index = line_index + 1;
+                }
+                new_sonnet = new_sonnet + "</div>"
+                cont.innerHTML = cont.innerHTML + new_sonnet;
+            }
+            console.log(cont.innerHTML);
+        }();
+        */
+
+        slider.oninput = function() {
+            var current = this.value;
+            var range = this.max - this.min;
+            var exact = false;
+            
+            console.log("slider: " + current);
+            
+            //hiding everything
+            
+            for (w in document.getElementsByClassName("foot")) {
+                if (0 <= w && w < document.getElementsByClassName("foot").length) {
+                    document.getElementsByClassName("foot")[w].style.visibility = "hidden";
+                }
+            }
+            
+            
+            //checking for exact frequency match and displaying / not displaying accordingly
+            for (s in sonnets) {
+                whole = document.getElementById(sonnets[s].var_name).getElementsByTagName("span");
+                console.log(whole);
+                if (current == sonnets[s].position) {
+                    for (t in whole) {
+                        if (0 <= t && t < whole.length) {
+                            whole[t].style.visibility = "visible";
+                        }
+                    }
+                    document.getElementById("sonnet_title").innerHTML = sonnets[s].title;
+                    exact = true;
+                    break;
+                } else {
+                    for (t in whole) {
+                        console.log(whole);
+                        console.log(t);
+                        if (0 <= t && t < whole.length) {
+                            whole[t].style.visibility = "hidden";
+                        }
+                    }
+                    document.getElementById("sonnet_title").innerHTML = "&nbsp;";
+                    exact = false;
+                }
+            }
+
+            console.log("exact: "+ exact);
+            
+            //creating display for 'untuned' location
+            if (exact == false) {
+                // perform probability calcuations and display text
+
+                //updating all signal strengths - NEEDS MORE SOPHISTICATED MATHS TO BOOST SIGNAL NEARER TO A SOURCE POINT ON THE SLIDER
+                for (s in sonnets) {
+                    diff = sonnets[s].position - current;
+                    if (diff < 0) {
+                        diff = 0 - diff;
+                    }
+                    sonnets[s].strength = range - diff;
+                    console.log(s + " strength: " + sonnets[s].strength);
+                };
+
+                //calculating total signal for current slider position
+                var signal_total = 0;
+                for (s in sonnets) {
+                    signal_total = signal_total + sonnets[s].strength;
+                };
+                console.log("signal_total: " + signal_total);
+                
+                //updating probabilities
+                for (s in sonnets) {
+                    sonnets[s].probability = sonnets[s].strength / signal_total;
+                    console.log(s + " probability: " + sonnets[s].probability);
+                };
+
+                //displaying a word in each position
+                function foot_display(sonnet_var, line_id,span_class) {
+                    
+                    //display word?
+                    num = Math.random();
+                    if (num < sonnet_var.probability) {
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.visibility = "visible";
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.opacity = sonnet_var.strength/150;
+                    } else {
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.visibility = "hidden";
+                    }
+                };
+
+                for (s in sonnets) {
+                    for (l in sonnets[s].words) {
+                        for (f in sonnets[s].words[l]) {
+                            foot_display(sonnets[s],l,f)
+                        }
+                    }
+                }
+            } 
+
+            
+        };
+
+    </script>
+</body>
