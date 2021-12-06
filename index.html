@@ -1,0 +1,313 @@
+<head>
+
+<style>
+        
+        /*FUNCTION*/
+        
+        #sonnet-container div {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        #instructions {
+            visibility: visible !important;
+            font-style: italic;
+        }
+
+        
+
+        /*STYLE*/
+
+        html {
+            background-color: ghostwhite;
+        }
+
+        body {
+            border: solid;
+            width: 50%;
+            margin: 1em auto;
+            overflow: hidden;
+            padding: 1em;
+            min-width: 25em;
+            background-color: rgb(30,30,30);
+            border-radius: 20px;
+            font-size: 11pt;
+            height: 90vh;
+        }
+
+        input {
+            width: 100%;
+            /* adapted from W3C guidelines*/
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 25px; /* Specified height */
+            background: #d3d3d3; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+            border-radius: 0;
+        }
+
+        input::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        input::-moz-range-thumb {
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        #sonnet_title {
+            background-color: lightgrey;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 0.5em 1em;
+        }
+
+        #sonnet-container {
+            width: -webkit-fill-available;
+            overflow: hidden;
+            background-color: white;
+            height: 70vh;
+            padding-top: 1em;
+            padding-left: 1em;
+        }
+
+        .foot {
+            transition: opacity .5s;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <input type="range" min=0 max=100 value="50" id="freq">
+
+    <p id="sonnet_title">&nbsp;
+            </p>
+    <p id="sonnet_author"></p>
+    <p>&nbsp;
+            </p>
+    <div id="sonnet-container">
+        <div id="instructions">Move the slider above to see the poems.</div>
+
+        
+        <!-- The text of the sonnets goes here in the format shown below-->
+
+        <div id="sonnet_1">
+            <p class="line line_1">
+                <span class="foot foot_1">Here is</span>&nbsp;
+                <span class="foot foot_2">a line</span>&nbsp;
+                <span class="foot foot_3">that is</span>&nbsp;
+                <span class="foot foot_4">cut up</span>&nbsp;
+                <span class="foot foot_5">in feet</span>&nbsp;
+            </p>
+            <p class="line line_2">
+                <span class="foot foot_1">And here's</span>&nbsp;
+                <span class="foot foot_2">line two,</span>&nbsp;
+                <span class="foot foot_3">also</span>&nbsp;
+                <span class="foot foot_4">in feet</span>&nbsp;
+                <span class="foot foot_5">for you.</span>&nbsp;
+            </p>
+            <p class="line line_3">
+               <!--This continues ...-->
+            </p>
+            <!--
+                ...
+                ...
+                ...
+            -->
+            <p class="line line_14">
+                <!--... to the end-->
+            </p>
+        </div>
+
+        <div id="sonnet_2">
+            <p class="line line_1">
+                <span class="foot foot_1">And then</span>&nbsp;
+                <span class="foot foot_2">the same</span>&nbsp;
+                <span class="foot foot_3">for this</span>&nbsp;
+                <span class="foot foot_4">poem</span>&nbsp;
+                <span class="foot foot_5">as well.</span>&nbsp;
+            </p>
+            <!-- 
+                ...
+                ...
+                ...
+             -->
+        </div>
+
+        <div id="sonnet_3">
+            <!--3rd poem-->
+        </div>
+
+        <div id="sonnet_4">
+            <!--4th poem-->
+        </div>
+
+        <div id="sonnet_5">
+            <!--5th poem-->
+        </div>
+    </div>
+
+
+    <script>
+        var slider = document.getElementById("freq");
+
+        // EACH SONNET REQUIRES A JS OBJECT IN THIS FORM ALSO
+
+        var sonnet_1 = {
+            var_name: "sonnet_1",
+            position: 17,
+            strength: 0,
+            probability: 0,
+            words: {
+                "line_1" : {
+                    "foot_1" : "Here is",
+                    "foot_2" : "a line",
+                    "foot_3" : "that is",
+                    "foot_4" : "cut up",
+                    "foot_5" : "in feet"
+                },
+                "line_2" : {
+                    // ...
+                    // ...
+                    // ...
+                },
+                // ...
+                // ...
+                // ...
+                "line_14" : {
+                    // ...like so.
+                }
+            },
+            title: "POEM TITLE HERE"
+        };
+        var sonnet_2 = {
+            // 2nd poem
+        };
+
+        var sonnet_3 = {
+            // 3rd poem
+        };
+
+        var sonnet_4 = {
+            // 4th poem
+        };
+
+        var sonnet_5 = {
+            // 5th poem
+        };
+
+        var sonnets = [sonnet_1,sonnet_2,sonnet_3,sonnet_4,sonnet_5];
+
+        slider.oninput = function() {
+            var current = this.value;
+            var range = this.max - this.min;
+            var exact = false;
+            
+            console.log("slider: " + current);
+            
+            //hiding everything
+
+            document.getElementById("instructions").style.display = 'none';
+            
+            for (w in document.getElementsByClassName("foot")) {
+                if (0 <= w && w < document.getElementsByClassName("foot").length) {
+                    document.getElementsByClassName("foot")[w].style.opacity = 0;
+                }
+            }
+            
+            
+            //checking for exact frequency match and displaying / not displaying accordingly
+            for (s in sonnets) {
+                whole = document.getElementById(sonnets[s].var_name).getElementsByTagName("span");
+                console.log(whole);
+                if (current == sonnets[s].position) {
+                    for (t in whole) {
+                        if (0 <= t && t < whole.length) {
+                            whole[t].style.visibility = "visible";
+                            whole[t].style.opacity = 1;
+                        }
+                    }
+                    document.getElementById("sonnet_title").innerHTML = sonnets[s].title;
+                    exact = true;
+                    break;
+                } else {
+                    for (t in whole) {
+                        console.log(whole);
+                        console.log(t);
+                        if (0 <= t && t < whole.length) {
+                            whole[t].style.opacity = 0;
+                        }
+                    }
+                    document.getElementById("sonnet_title").innerHTML = "&nbsp;";
+                    exact = false;
+                }
+            }
+
+            console.log("exact: "+ exact);
+            
+            //creating display for 'untuned' location
+            if (exact == false) {
+                // perform probability calcuations and display text
+
+                //updating all signal strengths
+                for (s in sonnets) {
+                    diff = sonnets[s].position - current;
+                    if (diff < 0) {
+                        diff = 0 - diff;
+                    }
+                    // using 1/x**2 (inverse square) to create signal drop-off, where x is diff (the distance between the slider position and the poem's position on the scale).
+                    sonnets[s].strength = 1/ (diff**0.5); 
+                };
+
+                //calculating total signal for current slider position
+                var signal_total = 0;
+                for (s in sonnets) {
+                    signal_total = signal_total + sonnets[s].strength;
+                };
+                console.log("signal_total: " + signal_total);
+                
+                //updating probabilities
+                for (s in sonnets) {
+                    sonnets[s].probability = sonnets[s].strength / signal_total;
+                    console.log(s + " probability: " + sonnets[s].probability);
+                };
+
+                //displaying a word in each position
+                function foot_display(sonnet_var, line_id,span_class) {
+                    
+                    //display word?
+                    num = Math.random();
+                    if (num < sonnet_var.probability) {
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.visibility = "visible";
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.opacity = sonnet_var.strength;
+                    } else {
+                        document.getElementById(sonnet_var.var_name).getElementsByClassName(line_id)[0].getElementsByClassName(span_class)[0].style.opacity = 0;
+                    }
+                };
+
+                for (s in sonnets) {
+                    for (l in sonnets[s].words) {
+                        for (f in sonnets[s].words[l]) {
+                            foot_display(sonnets[s],l,f)
+                        }
+                    }
+                }
+            } 
+
+            
+        };
+
+    </script>
+</body>
